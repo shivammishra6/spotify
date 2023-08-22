@@ -12,6 +12,18 @@ const songs = [
     { songName: 'Poppin them thangs', poster: "https://i1.sndcdn.com/artworks-000659663188-5tnfmz-t500x500.jpg", duration: "4:01", path: "music/3.mp3" },
 
     { songName: 'Committment Issues', poster: "https://i1.sndcdn.com/artworks-VdzX2UWqOKrOi8oG-7LXZ1w-t500x500.jpg", duration: "2:38", path: "music/4.mp3" },
+
+    { songName: 'Baller', poster: "https://i1.sndcdn.com/artworks-rQhcR1d5DQpr-0-t500x500.jpg", duration: "2:28", path: "music/5.mp3" },
+
+    { songName: 'Loyal To The Game', poster: "https://a10.gaanacdn.com/gn_img/albums/z8k3yd1Krx/8k3ygk9dbr/size_l.jpg", duration: "3:23", path: "music/6.mp3" },
+
+    { songName: 'Me And My Girlfriend', poster: "https://e1.pxfuel.com/desktop-wallpaper/176/250/desktop-wallpaper-2pac-shakur-me-and-my-girlfriend-2-pac.jpg", duration: "5:08", path: "music/7.mp3" },
+
+    { songName: 'Still Dre', poster: "https://i1.sndcdn.com/artworks-RdvrkBSoL9STi49c-4ZyIOA-t500x500.jpg", duration: "4:50", path: "music/8.mp3" },
+
+    { songName: 'Tradin War Stories', poster: "https://images.genius.com/8ec48b2cb57552179b13f1f160244d71.593x593x1.jpg", duration: "5:29", path: "music/9.mp3" },
+
+    { songName: 'We Rollin', poster: "https://i.scdn.co/image/ab67616d0000b2737f0e75bb34a47113838ab3b6", duration: "3:19", path: "music/10.mp3" },
 ]
 
 
@@ -69,7 +81,6 @@ const makeAllPlays = () => {
 const plays = document.querySelectorAll('.play')
 plays.forEach((element) => {
     element.addEventListener('click', (e) => {
-        if (music.paused) {
             makeAllPlays()
             index = parseInt(e.target.id)
             e.target.classList.remove('fa-play')
@@ -80,18 +91,6 @@ plays.forEach((element) => {
             h3.innerText = songs[index].songName
             play.classList.remove('fa-play')
             play.classList.add('fa-pause')
-        } else {
-            makeAllPlays()
-            index = parseInt(e.target.id)
-            e.target.classList.remove('fa-pause')
-            e.target.classList.add('fa-play')
-            music.src = `music/${index}.mp3`
-            timeupdate()
-            music.pause()
-            h3.innerText = songs[index].songName
-            play.classList.remove('fa-pause')
-            play.classList.add('fa-play')
-        }
     })
 })
 
