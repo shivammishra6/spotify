@@ -17,7 +17,7 @@ const songs = [
 
     { songName: 'Loyal To The Game', poster: "https://a10.gaanacdn.com/gn_img/albums/z8k3yd1Krx/8k3ygk9dbr/size_l.jpg", duration: "3:23", path: "music/6.mp3" },
 
-    { songName: 'Me And My Girlfriend', poster: "https://images.fineartamerica.com/images-medium-large-5/me-and-my-girlfriend-peter-perlegas.jpg", duration: "5:08", path: "music/7.mp3" },
+    { songName: 'Me And My Girlfriend', poster: "https://m.media-amazon.com/images/I/514lb0VXxkL._UC256,256_CACC,256,256_.jpg", duration: "5:08", path: "music/7.mp3" },
 
     { songName: 'Still Dre', poster: "https://i1.sndcdn.com/artworks-RdvrkBSoL9STi49c-4ZyIOA-t500x500.jpg", duration: "4:50", path: "music/8.mp3" },
 
