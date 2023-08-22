@@ -50,11 +50,14 @@ const timeupdate = () => {
     music.addEventListener('timeupdate', () => {
         progress = parseInt((music.currentTime / music.duration) * 100)
         bar.value = progress
+        if (music.ended)
+            forward()
     })
 
     bar.addEventListener('change', () => {
         music.currentTime = bar.value * music.duration / 100
     })
+
 }
 
 const makeAllPlays = () => {
@@ -66,26 +69,40 @@ const makeAllPlays = () => {
 const plays = document.querySelectorAll('.play')
 plays.forEach((element) => {
     element.addEventListener('click', (e) => {
-        makeAllPlays()
-        index = parseInt(e.target.id)
-        e.target.classList.remove('fa-play')
-        e.target.classList.add('fa-pause')
-        music.src = `music/${index}.mp3`
-        timeupdate()
-        music.play()
-        h3.innerText = songs[index].songName
-        play.classList.remove('fa-play')
-        play.classList.add('fa-pause')
+        if (music.paused) {
+            makeAllPlays()
+            index = parseInt(e.target.id)
+            e.target.classList.remove('fa-play')
+            e.target.classList.add('fa-pause')
+            music.src = `music/${index}.mp3`
+            timeupdate()
+            music.play()
+            h3.innerText = songs[index].songName
+            play.classList.remove('fa-play')
+            play.classList.add('fa-pause')
+        } else {
+            makeAllPlays()
+            index = parseInt(e.target.id)
+            e.target.classList.remove('fa-pause')
+            e.target.classList.add('fa-play')
+            music.src = `music/${index}.mp3`
+            timeupdate()
+            music.pause()
+            h3.innerText = songs[index].songName
+            play.classList.remove('fa-pause')
+            play.classList.add('fa-play')
+        }
     })
 })
+
 
 const Play = () => {
     plays[index].classList.remove('fa-play')
     plays[index].classList.add('fa-pause')
 }
 const h3 = document.querySelector('h3')
-document.querySelector('.fa-forward').addEventListener('click', () => {
-    if (index > 4) {
+const forward = () => {
+    if (index >= 4) {
         index = 0
     } else {
         index++
@@ -98,10 +115,13 @@ document.querySelector('.fa-forward').addEventListener('click', () => {
     Play()
     play.classList.remove('fa-play')
     play.classList.add('fa-pause')
+}
+document.querySelector('.fa-forward').addEventListener('click', () => {
+    return forward()
 })
 
 document.querySelector('.fa-backward').addEventListener('click', () => {
-    if (index < 0) {
+    if (index <= 0) {
         index = 4
     } else {
         index--
