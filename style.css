@@ -111,8 +111,8 @@ h3{
 @media(max-width:400px){
     #center{
         font-size: 25px;
-        margin:40px 0;
-
+        margin-top: 20px;
+        margin-bottom: 40px;
     }
     .round{
         border-radius: unset;
@@ -145,7 +145,7 @@ h3{
         font-size: 20px;
     }
     .black{
-        background-color: rgba(0,0,0,0.6);
+        background-color: rgba(0,0,0);
     }
     #bottom{
         padding-top:55px;
@@ -162,7 +162,7 @@ h3{
     }
     input[type='range']{
         z-index:8;
-        bottom:50px;
+        bottom:52px;
     }
     #append{
         margin-bottom:180px;
