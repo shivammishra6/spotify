@@ -15,7 +15,7 @@ body{
     width:500px;
     padding: 5px;
     border-radius: 30px;
-    margin:20px auto;
+    margin:10px auto;
     font-weight: bold;
     display: flex;
     align-items: center;
@@ -73,26 +73,21 @@ i{
     bottom: 0px;
 }
 
-@media(max-width:500px){
-    .white{
-        width:300px;
-    }
-}
-@media(max-width:350px){
-    .white{
-        width:250px;
-    }
-}
-@media(max-width:330px){
-    .white{
-        width:200px;    
-        padding:unset;
-    }
-}
-
 .center{
     display: flex;    
     justify-content: center;
+}
+
+h3{
+    position:absolute;
+    left:10%;
+    bottom:30px;
+}
+.round{
+    border-radius: 50%;
+    overflow: hidden;
+    height:50px;
+    width:50px;
 }
 
 @media(max-width:700px){
@@ -101,36 +96,21 @@ i{
     }
 }
 
-@media(max-width:560px){
-    .center img{
-        left: 0px;
-    }
-}
-
-.opacity{
-    opacity: 0;
-    transition:2s ease-out;
-}
-
-h3{
-    position:absolute;
-    left:165px;
-    bottom:25px;
-}
-
-@media(max-width:900px){
+@media(max-width:800px){
     h3{
-        position:unset;
+        bottom:13%;
+        left:10%;
+    }
+    .white{
+        font-size: small;
+        width:300px;
     }
 }
 
-.round{
-    border-radius: 50%;
-    overflow: hidden;
-    height:50px;
-    width:50px;
-}
-@media(max-width:350px){
+@media(max-width:400px){
+    #center{
+        font-size: 30px;
+    }
     .round{
         border-radius: unset;
         width: 100%;
@@ -143,9 +123,12 @@ h3{
     }
     .white{
         display: grid;
-        grid-template-columns: 130px 1fr;
+        width:250px;
+        height:280px;
+        grid-template-columns: 1fr 1fr;
         grid-template-rows: 1fr 30px;
         border-radius: 5px;
+        margin-bottom: 40px;
     }
     .white p{
         justify-self: flex-end;
@@ -156,28 +139,38 @@ h3{
         bottom:0px;
     }
     #bottom i{
-        font-size: 30px;
-    }
-    #bottom{
-        width: 72%;
-        height:70px;
+        font-size: 20px;
     }
     .black{
         background-color: rgba(0,0,0,0.6);
     }
+    #bottom{
+        padding-top:55px;
+        padding-left:75px;
+        padding-right:75px;
+        bottom: 0;
+    }
     .center h3{
-        width: 100%;
-        position: absolute;
-        bottom:65px;    
+        position: fixed;
         left:10%;
-        height: 50px;
-        padding-top: 15px;
-        font-size: small;
+        font-size: 15px;
+        z-index: 1;
+        bottom: 75px;
     }
     input[type='range']{
         z-index:8;
+        bottom:50px;
     }
     #append{
         margin-bottom:180px;
+    }
+}
+
+@media(max-width:305px){
+    #bottom{
+        padding-top:55px;
+        padding-left:55px;
+        padding-right:55px;
+        bottom: 0;
     }
 }
