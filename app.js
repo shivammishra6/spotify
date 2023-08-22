@@ -101,7 +101,7 @@ const Play = () => {
 }
 const h3 = document.querySelector('h3')
 const forward = () => {
-    if (index >= 4) {
+    if (index >= 10) {
         index = 0
     } else {
         index++
@@ -121,7 +121,7 @@ document.querySelector('.fa-forward').addEventListener('click', () => {
 
 document.querySelector('.fa-backward').addEventListener('click', () => {
     if (index <= 0) {
-        index = 4
+        index = 10
     } else {
         index--
     }
