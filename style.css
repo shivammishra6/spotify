@@ -49,6 +49,7 @@ li{
 }
 
 input[type="range"]{
+    z-index:8;
     display: block;
     width: 80vw;
     height: 5px;
@@ -56,7 +57,6 @@ input[type="range"]{
     bottom: 68px;
     left: 10%;
     cursor: pointer;
-    z-index:8;
 }
 
 nav img{
@@ -73,27 +73,25 @@ i{
 #bottom{
     position: absolute;
     bottom: 0px;
-    padding-top:35px;
-    padding-left:175px;
-    padding-right:175px;
 }
 
 .center{
-    display: flex;    
-    justify-content: center;
     width:100%;
     position:fixed;
     bottom:0px;
+    display: flex;    
+    justify-content: center;
 }
 
 h3{
-    position:absolute;
+    position:fixed;
+    z-index:1;
     left:10%;
     bottom:12.5%;
     font-size: 18px;
-    position: fixed;
-    left:10%;
-    z-index: 1;
+}
+#append{
+    margin-bottom:180px;
 }
 .round{
     border-radius: 50%;
@@ -102,18 +100,19 @@ h3{
     width:50px;
 }
 
-#append{
-    margin-bottom:150px;
-}
-
-.black{
-    background-color: rgba(0,0,0);
+#bottom{
+    padding-top:45px;
+    padding-left:20%;
+    padding-right:20%;
 }
 
 @media(max-width:700px){
     .center img{
         left: 55px;
     }
+}
+.black{
+    background-color: rgba(0,0,0);
 }
 
 @media(max-width:800px){
@@ -151,12 +150,25 @@ h3{
     .white p{
         justify-self: flex-end;
     }
+
     #bottom i{
         font-size: 20px;
     }
+    #bottom{
+        padding-top:55px;
+        padding-left:75px;
+        padding-right:75px;
+        bottom: 0;
+    }
+
     input[type='range']{
         bottom:52px;
     }
+
+    h3{
+        bottom:11%;
+    }
+    
 }
 
 @media(max-width:305px){
